@@ -24,7 +24,6 @@ Este projeto é uma automação de testes e web scraping desenvolvida para extra
 ## 📊 Relatórios de Execução
 Você pode visualizar o último relatório de testes gerado automaticamente pelo nosso pipeline de CD aqui:
 👉 [Link para o Allure Report](https://antoniosa28.github.io/-projeto--qa-tests/)
-*(Substitua pelo seu link real do GitHub Pages)*
 
 ## ⚙️ Como rodar localmente
 
