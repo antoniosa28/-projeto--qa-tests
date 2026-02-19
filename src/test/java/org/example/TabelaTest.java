@@ -1,9 +1,8 @@
 package org.example;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +14,7 @@ public class TabelaTest {
 
     private WebDriver driver;
 
-    @Before
+    @BeforeEach
     public void setup() {
         // Configura o driver do Chrome automaticamente
         WebDriverManager.chromedriver().setup();
@@ -55,7 +54,7 @@ public class TabelaTest {
     }
 
 
-    @After
+    @AfterEach
     public void tearDown() {
         // Fecha o navegador ao terminar o teste
         if (driver != null) {
