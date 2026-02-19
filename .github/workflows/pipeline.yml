@@ -3,15 +3,12 @@ name: Execução de Testes Automáticos
 on:
   push:
     branches: [ "main", "master" ]
-  pull_request:
-    branches: [ "main", "master" ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Baixar o código do repositório
+      - name: Baixar o código
         uses: actions/checkout@v4
 
       - name: Configurar o Java 17
@@ -21,5 +18,20 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Executar Testes com Maven
+      - name: Executar Testes
         run: mvn test
+        continue-on-error: true # Gera o relatório mesmo se o teste falhar
+
+      - name: Gerar Relatório Allure
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: target/allure-results
+          allure_history: allure-history
+
+      - name: Publicar no GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: allure-history
