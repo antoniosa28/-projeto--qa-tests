@@ -1,2 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","6253","testarClassificacaoEspn()","","Thu Feb 19 18:44:36 UTC 2026","broken","Thu Feb 19 18:44:43 UTC 2026","","org.example.TabelaTest","org.example.TabelaTest","testarClassificacaoEspn"
